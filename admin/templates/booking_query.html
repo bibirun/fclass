@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = utf-8 />
+		<title>课室预约</title>
+	    <link type = "text/css"  rel = "stylesheet" href = "admin/style/booking_query.css"/>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+
+		<!---<script src="admin/js/jquery-1.11.2.min.js"></script>  -->
+		<!--<script src = "admin/js/calender.js"></script> -->
+		<!--<script src="admin/js/jquery-ui.min.js"></script> -->
+		<!--<link rel="stylesheet" type="text/css" href="admin/style/jquery-ui.min.css"> -->
+	</head>
+<body>
+	<!--  第一版内容 -->
+	<div>
+	
+		<!--  第一版头部内容 -->
+		<div class = "top">
+			<div class = "top-one">
+				<p>
+					<a href = "home.php"  title = "index">空闲教室预订首页</a>
+					<a href = "" title = "help">系统使用手册</a>
+				</p>
+			</div>
+			<div class = "top-two">
+				<p>
+					欢迎<em><?php if($_SESSION['user']){echo $_SESSION['user']['stu_name'];}else{echo '游客';}?></em>使用空闲教室预约系统
+					<?php if($_SESSION['user']){ echo '<a href = "home_privilege.php?act=logout"><em>退出</em></a>';}else{echo '<a href = "home_privilege.php?act=login"><em>登录</em></a>';} ?>
+				</p>
+			</div>	
+		</div>
+		
+		<!--  第一版标志部分 -->
+		<div class = "logo">
+			<div class = "logo-one"></div>
+		</div>
+		
+	<!--第三版内容-->
+	<div class = "query" id = "locator">
+	
+		<!--查询条件部分-->
+			
+			<div class = "q-top">
+				<form action = "user_center.php" method = "post">
+					<input type = "hidden" name = "act" value = "query" />
+					<span>教学楼名称<input type = "text" name = "build_name" maxlength = "20" class = "query-text1" /></span>
+					<span>教学楼编号<input type = "text" name = "build_num" maxlength = "20" class = "query-text1" /></span>
+					<span>课室号<input type = "text" name = "class_num" maxlength = "20"  class = "query-text1" /></span>
+					<!--<span>日期<input type = "text" name = "order_date" readonly = "readonly" id = "start" class = "query-text1"/></span>-->
+					<span><input id = "q-button" type = "submit" name = "submit" value = "查询" /></span>
+				</form>
+			</div>
+		
+		<!--显示查询结果部分-->
+		<div class = "q-result">
+			<p><?php echo $build_name ,$build_num, $class_num; ?></p>
+		</div>
+		
+		<!--表格-->
+		<div class = "q-table">
+			<table width = "100%" cellpadding = "2" cellspacing = "1" border = "0">
+				<tr bgcolor = "#222222" height = "50" id = "result-name">
+					<th>教学楼</th>
+					<th>编号</th>
+					<th>课室号</th>
+					<th>类型</th>
+					<th>时间</th>
+					<th>容纳人数</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+				<?php foreach($allClassInfo as $allClassInfos): ?>
+				<tr bgcolor = "#EEEEEE" align = "center" height = "30">
+					<td><?php echo $allClassInfos['build_name']; ?></td>
+					<td><?php echo $allClassInfos['build_num']; ?></td>
+					<td><?php echo $allClassInfos['class_num']; ?></td>
+					<td><?php if($allClassInfos['class_type']=='s'){echo '标准';}else{echo '普通';} ?></td>
+					<td>
+						<?php 
+								if($allClassInfos['class_time']=='1'){
+									echo '07:00-07:45';
+								}elseif($allClassInfos['class_time']=='2'){
+									echo '08:00-08:45';
+								}elseif($allClassInfos['class_time']=='3'){
+									echo '08:55-09:40';
+								}elseif($allClassInfos['class_time']=='4'){
+									echo '10:00-10:45';
+								}elseif($allClassInfos['class_time']=='5'){
+									echo '10:55-11:40';
+								}elseif($allClassInfos['class_time']=='6'){
+									echo '14:40-15:25';
+								}elseif($allClassInfos['class_time']=='7'){
+									echo '15:35-16:20';
+								}elseif($allClassInfos['class_time']=='8'){
+									echo '16:30-18:00';
+								}elseif($allClassInfos['class_time']=='9'){
+									echo '20:00-21:30';
+								}else{
+									echo '';
+								}
+							?>
+					</td>
+					<td><?php echo $allClassInfos['class_contain_num']; ?></td>
+					<td><?php if($allClassInfos['class_status']=='f'){echo '空闲';}else{echo '';} ?></td>
+					<td bgcolor = "#0A929A" id = "book-button" width = "8%"><a href = "bill.php?act=confirm&id=<?php echo $allClassInfos['class_id']; ?>" title = "book">预定</a></td>
+				</tr>
+				<?php endforeach;?>
+			</table>
+			<table align = "center">
+				<tr>
+					<td><?php echo $page ;?></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<!--底部版权信息-->
+	<div class = "footer">
+		<p>&copy;2015 HBL All Rights Reserverd</p>
+	</div>
+</body>
+</html>

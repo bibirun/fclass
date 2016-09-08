@@ -1,0 +1,103 @@
+body,p,li,ul,div,img,h1,h2,h3,h4,h5,h6,form,input{margin:0px;padding:0px;}
+img{border:0}
+body{
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+	font-size:16px;
+}
+em{font-style:normal;font-size:12px;}
+/*登录页面样式*/
+.login{
+	width:1290px;
+	height:667px;
+	background:#fafafa;
+	margin:auto;
+}
+
+
+
+/*登录页面内容样式*/
+.l-content{
+	width:1120px;
+	height:517px;
+	background:#FAFAFA;
+	padding-left:85px;
+	padding-right:85px;
+	padding-top:70px;
+	overflow:hidden;
+	
+}
+.l-c-banner,.l-c-form{
+	float:left;
+}
+.l-c-banner{
+	width:466px;
+	height:407px;
+	background:url(../images/Login_banner.jpg) no-repeat;
+}
+.change_pass_banner{
+	width:418px;
+	height:211px;
+	float:left;
+	margin-top:50px;
+	background:url(../images/login_banner.gif) no-repeat;
+}
+.change_pass_form{
+	width:448px;
+	height:300px;
+	float:left;
+	background:#fff;
+	margin-left:195px;
+	border:1px solid #dbd8d8;
+}
+.l-c-form{
+	width:448px;
+	height:407px;
+	background:#fff;
+	margin-left:195px;
+	border:1px solid #dbd8d8;
+}
+
+.f-user,.f-pass{
+	height:56px;
+	width:326px;
+	margin-top:54px;
+	padding-left:20px;
+	margin-left:50px;
+	font-size:25px;
+	color:
+	
+}
+
+.f-user{
+	background:url(../images/login_user.jpg) no-repeat;
+	background-position: left center;
+	border:1px solid #DEDEDE;
+}
+
+.f-pass{
+	background:url(../images/login_pass.jpg) no-repeat;
+	background-position: left center;
+	border:1px solid #DEDEDE;
+}
+
+#submit{
+	width:360px;
+	height:57px;
+	background:url(../images/login_bt.jpg) no-repeat;
+	margin-left:50px;
+	margin-top:54px;
+	color:#fff;
+	font-size:25px;
+	border:0;
+}
+#forget_pass{
+	margin-left:320px;
+	margin-top:10px;
+	font-size:10px;
+	font-weight:bold;
+}
+
+#forget_pass a:link,#forget_pass a:visited,#forget_pass a:hover{
+	text-decoration:none;
+	color:#0000ee;
+}

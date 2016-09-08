@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>个人中心</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href = "admin/style/center.css" />
+		<link rel = "stylesheet" href ="admin/style/public.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用空闲课室预约系统</em>
+				<em><a href = "home.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<!--内容部分-->
+		<div class = "center-content">
+
+			<ul class = "ul-content">
+				<li class = "li-content s1"><a href = ""  title = "Information" id = "locator_info"><span>我的资料</span></a>
+					<div class = "tab-content">
+						
+						<p>学&nbsp&nbsp&nbsp&nbsp号：</p>
+						<p>姓&nbsp&nbsp&nbsp&nbsp名：</p>
+						<p>性&nbsp&nbsp&nbsp&nbsp别：</p>
+						<p>学&nbsp&nbsp&nbsp&nbsp校：</p>
+						<p>学&nbsp&nbsp&nbsp&nbsp院：</p>
+						<p>专业方向：</p>
+						<p>年&nbsp&nbsp&nbsp&nbsp级：</p>
+						<p>班&nbsp&nbsp&nbsp&nbsp级：</p>
+						<p>邮&nbsp&nbsp&nbsp&nbsp箱：</p>
+						<form action = "user_center.php" method = "post">
+							<input type = "hidden" name = "act" value = "user_info" />
+							<p>电子邮箱：<input type = "text" name = "email" class = "input-info" id = "edit" /></p>
+							
+							<p><input type = "submit" name = "submit" id = "submit" value = "保存" class = "input-sub"></p>
+				
+						</form>
+					</div>
+				</li>
+					
+					
+				<li class = "li-content s2"><a href = "#"  title = "Booking information"  ><span>我的预约</span></a>
+						
+					<div class = "tab-content">
+						<div class = "center-content-top">
+							<table width = "100%" cellpadding = "1" cellspacing = "1">
+								<tr align = "center">
+									<th>教学楼名称</th>
+									<th>编号</th>
+									<th>课室号</th>
+									<th>类型</th>
+									<th>时间</th>
+									<th>预定日期</th>
+									<th>操作</th>
+								</tr>
+								
+								<tr bgcolor = "#ededed" align = "center">
+									<td>园果楼</td>
+									<td>A</td>
+									<td>503</td>
+									<td>标准</td>
+									<td>7:00-7:50</td>
+									<td>2015-10-11</td>
+									<td bgcolor = "#0A929A"><a href = "#" title = "unsubscribe">退订</a></td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						<div class = "center-content-footer">
+						</div>
+					</div>
+				</li>
+					
+					
+				<li class = "li-content s3"><a href = "#"  title = "History"><span>历史记录</span></a>
+					
+					<div class = "tab-content">
+					
+						<div class = "center-content-top">
+							<table width = "100%" cellpadding = "2" cellspacing = "1">
+								<tr align = "center">
+									<th>教学楼名称</th>
+									<th>编号</th>
+									<th>课室号</th>
+									<th>类型</th>
+									<th>时间</th>
+									<th>预定日期</th>
+								</tr>
+								
+								<tr bgcolor = "#ededed" align = "center">
+									<td>园果楼</td>
+									<td>A</td>
+									<td>503</td>
+									<td>标准</td>
+									<td>7:00-7:50</td>
+									<td>2015-10-11</td>
+								</tr>
+							</table>
+						</div>
+						<div class = "center-content-footer">
+						</div>
+						
+					</div>
+				</li>
+					
+					
+				<li class = "li-content s4"><a href = "#"  title = "Change password"><span>修改密码</span></a>
+					
+					<div class = "tab-content">
+						
+						<form action = "" method = "">
+							<p>原有密码：<input type = "password" name = "password" maxlength = "20" class = "input-pass" /></p><br/>
+							<p>新密码：&nbsp <input type = "password" name = "new-password" maxlength = "20" class = "input-pass" /></p><br/>
+							<p>确认密码：<input type = "password" name = "confirm-password" maxlength = "20" class = "input-pass" /></p><br/>
+							<p><input type = "submit" name = "pass-submit" value = "保存" class = "input-sub" /></p>
+						</form>
+					</div>
+				</li>
+					
+			</ul>
+				
+			
+		</div>
+		
+		
+		<!--版权信息-->
+		<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

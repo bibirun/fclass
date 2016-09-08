@@ -1,0 +1,197 @@
+body,p,li,ul,div,img,h1,h2,h3,h4,h5,form,h6,input,select{margin:0px;padding:0px;}
+body{
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+	font-size:16px;
+}
+em{font-style:normal;}
+
+.content{
+	width:1290px;
+	height:587px;
+	margin:auto;
+	background:#FAFAFA;
+	overflow:hidden;
+}
+/*我的资料样式*/
+.information{
+	width:470px;
+	height:490px;
+	background:#FFFFFF;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:16px;
+	color:#6C6C6C;
+	padding-left:30px;
+	padding-top:10px;
+	
+	border:1px solid #D5D5D5;
+}
+.information p{
+	height:26px;
+	width:430px;
+	padding-top:4px;
+	background:#FAFAFA;
+	margin-top:20px;
+	overflow:hidden;
+}
+
+
+/*我的记录样式*/
+.booking_information{
+	width:1290px;
+	height:587px;
+	
+}
+#result-name{
+	color:#FFFFFF;
+}
+#unsubscribe a:link,#unsubscribe a:visited{
+	text-decoration:none;
+	color:#EDEDED;
+}
+#unsubscribe a:hover{
+	text-decoration:none;
+	color:#FAFAFA;
+}
+
+/*修改密码样式*/
+.change_pass{
+	width:500px;
+	height:400px;
+	background:#FFFFFF;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	overflow:hidden;
+	position:relative;
+}
+.change_pass p{
+	width:450px;
+	height:50px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:10px;
+	background:#FAFAFA;
+	color:#717171;
+	font-size:18px;
+	
+}
+.input-pass{
+	height:40px;
+	width:295px;
+	border:1px solid #EDEDED;
+	font-size:18px;
+	padding-left:5px;
+}
+.input-sub{
+	height:40px;
+	width:80px;
+	background:#0A929A;
+	-moz-border-radius:8px; 
+    -webkit-border-radius: 8px; 
+    border-radius:8px;
+	color:#FFFFFF;
+	font-size:18px;
+	margin-left:200px;
+}
+/*预定跳转确认信息面样式*/
+.content-border{
+	height:200px;
+	width:1200px;
+	border:1px solid #0A929A;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:100px;
+	text-align:center;
+}
+.content-border p{
+	color:#0A929A;
+	font-size:16px;
+	margin-top:10px;
+}
+.confirm-info{
+	width:1100px;
+	height:100px;
+	background:#FFFFFF;
+	border:1px solid #EDEDED;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+.confirm-info table{
+	padding:0px;
+	margin:0px;
+}
+.content-buttom{
+	height:100px;
+	width:450px;
+	background:#FAFAFA;
+	margin:auto;
+	padding-left:50px;
+	text-align:center;
+}
+#content-reject{
+	float:left;
+	margin-left:80px;
+	margin-top:20px;
+	padding-top:7px;
+	height:33px;
+	width:80px;
+	color:#FFFFFF;
+	background:#0A929A;
+	font-size:18px;
+}
+#content-post{
+	height:40px;
+	width:80px;
+	float:left;
+	border:none;
+	margin-left:80px;
+	margin-top:20px;
+	color:#FFFFFF;
+	text-align:center;
+	background:#0A929A;
+	font-size:18px;
+}
+#tr-input{
+	background:transparent;
+	border:0px;
+	text-align:center;
+	font-size:14px;
+}
+/*管理员编辑信息页面样式*/
+#select-sex{
+	height:43px;
+	width:300px;
+	border:1px solid #EDEDED;
+	font-size:18px;
+	padding-left:5px;
+}
+#cancel-button{
+	width:60px;
+	height:35px;
+	background:#0A929A;
+	padding-left:20px;
+	padding-top:8px;
+	font-size:18px;
+	color:#BEBEBE;
+	-moz-border-radius:8px; 
+    -webkit-border-radius: 8px; 
+    border-radius:8px;
+	position:absolute;
+	top:302px;
+	right:300px;
+}
+#input-sub{
+	height:40px;
+	width:80px;
+	background:#0A929A;
+	-moz-border-radius:8px; 
+    -webkit-border-radius: 8px; 
+    border-radius:8px;
+	color:#FFFFFF;
+	font-size:18px;
+	margin-left:280px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>编辑课室信息</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/edit-class.css" />
+		<link rel = "stylesheet" href ="style/public.css" />
+	</head>
+<body>
+	<div class = "user-management">
+		
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "user-management-content">
+			<a href = "area.php?act=edit" title = "list">
+			<div id = "add-class-content-top">
+				<p>课室列表</p>
+			</div>
+			</a>
+			<div class = "add-class">
+				
+				<form action = "area.php" method = "post">
+					<input type = "hidden" name = "act" value = "update" />
+					<input type = "hidden" name = "class_id" value = "<?php echo $areaInfos['class_id']; ?>" />
+					<p>教学楼&nbsp&nbsp：<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "add-user-input" value = "<?php echo $areaInfos['build_name'];?> " /></p><br>
+					<p>编&nbsp&nbsp号&nbsp&nbsp：<input type = "text" name = "build_num" maxlength = "20" size = "20" id = "add-user-input" value = "<?php echo $areaInfos['build_num'];?> " /></p><br>
+					<p>教室号&nbsp&nbsp：<input type = "text" name = "class_num" maxlength = "20" size = "20" id = "add-user-input" value = "<?php echo $areaInfos['class_num'];?> " /></p><br>
+					<p>类&nbsp&nbsp型&nbsp：
+						<select name = "class_type" id = "add-user-select">
+							<option value = "c" <?php if($areaInfos['class_type']=='c') echo 'selected = "selected"'; ?> >普通</option>
+							<option value = "s" <?php if($areaInfos['class_type']=='s') echo 'selected = "selected"'; ?> > 标准</option>
+						</select>
+					</p></br>
+					<p>容纳人数：<input type = "text" name = "class_contain_num" maxlength = "20" size = "20" id = "add-user-input" value = "<?php echo $areaInfos['class_contain_num'];?> " /></p><br>
+					<p>时&nbsp&nbsp间&nbsp：
+						<select name = "class_time" id = "add-user-select">
+							<option value = "1" <?php if($areaInfos['class_time']=='1') echo 'selected = "selected"'; ?> >07:00-07:45</option>
+							<option value = "2" <?php if($areaInfos['class_time']=='2') echo 'selected = "selected"'; ?> >08:00-08:45</option>
+							<option value = "3" <?php if($areaInfos['class_time']=='3') echo 'selected = "selected"'; ?> >08:55-09:40</option>
+							<option value = "4" <?php if($areaInfos['class_time']=='4') echo 'selected = "selected"'; ?> >10:00-10:45</option>
+							<option value = "5" <?php if($areaInfos['class_time']=='5') echo 'selected = "selected"'; ?> >10:55-11:40</option>
+							<option value = "6" <?php if($areaInfos['class_time']=='6') echo 'selected = "selected"'; ?> >14:40-15:25</option>
+							<option value = "7" <?php if($areaInfos['class_time']=='7') echo 'selected = "selected"'; ?> >15:35-16:20</option>
+							<option value = "8" <?php if($areaInfos['class_time']=='8') echo 'selected = "selected"'; ?> >16:30-18:00</option>
+							<option value = "9" <?php if($areaInfos['class_time']=='9') echo 'selected = "selected"'; ?> >20:00-21:30</option>
+						</select>
+					</p></br>
+					<p><input type = "submit" name = "submit" value = "确认" id = "add-user-submit" /></p>
+					
+				</form>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+		
+	</div>
+</body>
+</html>

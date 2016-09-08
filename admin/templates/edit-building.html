@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>编辑教学楼</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/public.css" />
+		<link rel = "stylesheet" href = "style/add-college.css" />
+	</head>
+<body>
+	<div class = "add-college">
+		<div class = "public-top">
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php" title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "add-college-content">
+		
+			<div class = "add-form">
+				<form action = "building.php" method = "post" enctype="multipart/form-data">
+					<input type = "hidden" name = "act" value = "update" />
+					<input type = "hidden" name = "build_id" value = "<?php echo $_GET['id']; ?>" />
+					<h3>请选择一张照片（ JPG | 256*176 ）</h3><br/>
+					<input type = "file" name = "build_pic" id = "bt-file" /><br/><br/>
+					<h3>请填写教学楼名称</h3><br/>
+					<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "bt-text" value = "<?php echo $buildingInfos['build_name']; ?>" /><br/><br/><br/>
+					<div class = "textarea">
+						<p>简介</p>
+						<textarea name = "build_text" cols = "70" rows = "18"><?php echo $buildingInfos['build_text'] ;?></textarea>
+					</div>
+					<input type = "submit" value ="提交修改" id = "bt-submit"/>
+				</form>
+			</div>
+			<div id = "back">
+				<p><a href = "index.php#point" title = "Index">取消</a></p>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>我的预约</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href ="admin/style/public.css" />
+		<link rel = "stylesheet" href = "admin/style/my_information.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+				<img src = "admin/images/p_logo.gif" />
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "home.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+			
+		</div>
+		
+		
+		<div class = "content">
+			<div class = "booking_information">
+				<table width = "100%" cellpadding = "2" cellspacing = "1" border = "0">
+					<tr bgcolor = "#222222" height = "50" id = "result-name">
+						<th>序号</th>
+						<th>教学楼名称</th>
+						<th>教学楼编号</th>
+						<th>课室编号</th>
+						<th>类型</th>
+						<th>时间</th>
+						<th>日期</th>
+						<th>操作</th>
+					</tr>
+					<?php 
+						$i = 0;
+						foreach($orderInfo as $orderInfos): ?>
+					<tr bgcolor = "#EEEEEE" align = "center">
+						<td><?php echo ++$i; ?></td>
+						<td><?php echo $orderInfos['build_name']; ?></td>
+						<td><?php echo $orderInfos['build_num']; ?></td>
+						<td><?php echo $orderInfos['class_num']; ?></td>
+						<td><?php if($orderInfos['class_type']== 's'){echo '标准' ;}else{ echo '普通';} ?></td>
+						<td>
+							<?php
+								if($orderInfos['order_time']=='1'){
+									echo '07:00-07:45';
+								}elseif($orderInfos['order_time']=='2'){
+									echo '08:00-08:45';
+								}elseif($orderInfos['order_time']=='3'){
+									echo '08:55-09:40';
+								}elseif($orderInfos['order_time']=='4'){
+									echo '10:00-10:45';
+								}elseif($orderInfos['order_time']=='5'){
+									echo '10:55-11:40';
+								}elseif($orderInfos['order_time']=='6'){
+									echo '14:40-15:25';
+								}elseif($orderInfos['order_time']=='7'){
+									echo '15:35-16:20';
+								}elseif($orderInfos['order_time']=='8'){
+									echo '16:30-18:00';
+								}elseif($orderInfos['order_time']=='9'){
+									echo '20:00-21:30';
+								}else{
+									echo '';
+								}
+							?>
+						</td>
+						<td><?php echo $orderInfos['order_date']; ?></td>
+						<td  bgcolor = "#0A929A" width = "8%" id = "unsubscribe"><a href = "user_center.php?act=unsubscribe&id=<?php echo $orderInfos['order_id']; ?>" title = "unsubscribe" onclick = "return confirm('你确定要退订吗？')" >退订</a></td>
+					</tr>
+					<?php endforeach; ?>
+				</table>
+				<table align = "center">
+					<tr>
+						<td><?php echo $page; ?></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+			
+		<!--版权信息-->
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

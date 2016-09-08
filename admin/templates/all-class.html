@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>所有课室</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/all-class.css" />
+		<link rel = "stylesheet" href ="style/public.css" />
+	</head>
+<body>
+	<div class = "user-management">
+		
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "user-management-content">
+		
+			<div class = "query">
+				<form action = "area.php" method = "post">
+					<input type = "hidden" name = "act" value = "query" />
+					<span>教学楼名称：<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>教学楼编号：<input type = "text" name = "build_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>课室编号：<input type = "text" name = "class_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span><input type = "submit" name = "submit" value = "查询" id = "query-submit" /></span>
+				</form>
+			<a href = "area.php?act=add" title = "list">
+				<div id = "add-class-content-top">
+				<p>添加课室</p>
+				</div>
+			</a>
+			</div>
+			
+			
+			<div class = "result">
+				<table width = "100%" cellpadding = "5" cellspacing = "1">
+					
+					<tr>
+						<th>序号</th>
+						<th>教学楼名称</th>
+						<th>编号</th>
+						<th>课室号</th>
+						<th>类型</th>
+						<th>容纳人数</th>
+						<th>上课时间</th>
+					</tr>
+					<?php 
+						$i = 0;
+						foreach($areaInfo as $areaInfos):?>
+					<tr align = "center" bgcolor = "#FAFAFA">
+						<td><?php echo ++$i; ?></td>
+						<td><?php echo $areaInfos['build_name']; ?></td>
+						<td><?php echo $areaInfos['build_num']; ?></td>
+						<td><?php echo $areaInfos['class_num']; ?></td>
+						<td><?php if($areaInfos['class_type']=='s'){echo '标准';}else{echo '普通';} ?></td>
+						<td><?php echo $areaInfos['class_contain_num']; ?></td>
+						<td>
+							<?php 
+								if($areaInfos['class_time']=='1'){
+									echo '07:00-07:45';
+								}elseif($areaInfos['class_time']=='2'){
+									echo '08:00-08:45';
+								}elseif($areaInfos['class_time']=='3'){
+									echo '08:55-09:40';
+								}elseif($areaInfos['class_time']=='4'){
+									echo '10:00-10:45';
+								}elseif($areaInfos['class_time']=='5'){
+									echo '10:55-11:40';
+								}elseif($areaInfos['class_time']=='6'){
+									echo '14:40-15:25';
+								}elseif($areaInfos['class_time']=='7'){
+									echo '15:35-16:20';
+								}elseif($areaInfos['class_time']=='8'){
+									echo '16:30-18:00';
+								}elseif($areaInfos['class_time']=='9'){
+									echo '20:00-21:30';
+								}else{
+									echo '';
+								}
+							?>
+						</td>
+						<td width = "8%" id = "result-td" bgcolor = "#0A929E">
+							<a href = "area.php?act=edit-class&id=<?php echo $areaInfos['class_id']; ?>" title = "Edit">编辑</a>
+							<a href = "area.php?act=delete-class&id=<?php echo $areaInfos['class_id']; ?>" title = "Delete" onclick="return confirm('你确定要删除<?php echo $areaInfos['build_name'],$areaInfos['build_num'],$areaInfos['class_num'];?>吗？');">删除</a>
+						</td>
+					</tr>
+					<?php endforeach;?>
+				</table>
+				
+				<table align = "center">
+					<tr>
+						<td><?php echo $page ;?></td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+		
+	</div>
+</body>
+</html>

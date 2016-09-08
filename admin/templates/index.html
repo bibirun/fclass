@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = utf-8 />
+		<title>HBL空闲课室预约系统</title>
+	    <link type = "text/css"  rel = "stylesheet" href = "admin/style/index.css"/>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+	</head>
+<body>
+	<!--  第一版内容 -->
+	<div>
+	
+		<!--  第一版头部内容 -->
+		<div class = "top">
+			<div class = "top-one">
+				<p>
+					<a href = "home.php"  title = "index">空闲教室预订首页</a>
+					<a href = "" title = "help">系统使用手册</a>
+				</p>
+			</div>
+			<div class = "top-two">
+				<p>
+					欢迎<em><?php if($_SESSION['user']){echo $_SESSION['user']['stu_name'];}else{echo '游客';}?></em>使用空闲教室预约系统
+					<?php if($_SESSION['user']){ echo '<a href = "home_privilege.php?act=logout"><em>退出</em></a>';}else{echo '<a href = "home_privilege.php?act=login"><em>登录</em></a>';} ?>
+		
+				</p>
+			</div>
+				
+		</div>
+		
+		
+		
+		<!--  第一版标志部分 -->
+		<div class = "logo">
+			<div class = "logo-one"></div>
+		</div>
+		
+		<!--  第一版导航栏内容 -->
+		<div class = nav>
+			<ul>
+				<li><a href = "home.php" title = "book">首页</a></li>
+				<li><a href = "user_center.php?act=booking_class" title = "book">预约课室</a></li>
+				<li><a href = "user_center.php?act=my-info" title = "person center">我的资料</a></li>
+				<li><a href = "user_center.php?act=booking-info" title = "unsubscribe">我的预约</a></li>
+				<li><a href = "user_center.php?act=booking-record" title = "unsubscribe">历史记录</a></li>
+				<li><a href = "user_center.php?act=change-pass" title = "unsubscribe">修改密码</a></li>
+			</ul>
+		</div>
+		
+		<!--  第一版Banner部分 -->
+		<div class = "banner"></div>
+		<!--  第一版底部部分-->
+		<!--     <div class = "bottom-control"></div>       -->
+	</div>
+	
+	<!--第二版内容-->
+	<div class = "college">
+	
+		<div class = "college-top">
+			<h2>教学楼</h2>
+		</div>
+		
+		<div class = "college-content">
+		
+			<!--教学楼图片部分-->
+			<?php foreach($buildingInfo as $buildingInfos):?>
+			<div class = "cc-content">
+				<div class = "cc-pic"><article><a href = "user_center.php?act=look_up&id=<?php echo $buildingInfos['build_id'];?>" ><img src = "<?php echo 'admin/' . substr($buildingInfos['build_pic'],1);?>" /><h2><?php echo $buildingInfos['build_name'];?></h2></article></a></div>
+				
+			</div>
+			
+			<?php endforeach; ?>
+			<!--教学楼部分结束-->
+		</div>
+	</div>
+	
+	
+	<!--第三版内容-->
+	
+	<!--底部版权信息-->
+	<div class = "footer">
+		<p>&copy;2015 HBL All Rights Reserverd</p>
+	</div>
+</body>
+</html>

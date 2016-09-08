@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>确认预约信息</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href ="admin/style/public.css" />
+		<link rel = "stylesheet" href = "admin/style/my_information.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+				<img src = "admin/images/p_logo.gif" />
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "home.php"  title = "首页">首页</a></em>
+				<em><a href = "" title = "使用手册">使用手册</a></em>
+			</div>
+			
+		</div>
+		
+		
+		<div class = "content">
+			<div class = "content-border">
+				<p>请您确认你的信息是否正确，如发现错误，请按取消按钮取消提交预约，重新预约课室。</p>
+				<p>如果提交预约过程出现任何错误，请到”我的预约“，查看预约是否已经成功。</p>
+				<form action = "bill.php" method = "post">
+					<input type = "hidden" name = "act" value = "confirm-bill" />
+					<div class = "confirm-info">
+						<table width = "100%" cellpadding = "2" cellspacing = "1" border = "0">
+							<tr bgcolor = "#222222" height = "50" id = "result-name">
+								<th>序号</th>
+								<th>教学楼名称</th>
+								<th>教学楼编号</th>
+								<th>课室号</th>
+								<th>课室类型</th>
+								<th>时间</th>
+								<th>日期</th>
+								<th>用户名</th>
+							</tr>
+							
+							<tr align = "center">
+								
+									
+									<td>1</td>
+									<td><input type = "text" name = "build_name" value = "<?php echo $allClassInfo['build_name']; ?>" readonly = "readonly" id = "tr-input" /></td>
+									<td><input type = "text" name = "build_num" value = "<?php echo $allClassInfo['build_num']; ?>" readonly = "readonly" id = "tr-input"/></td>
+									<td><input type = "text" name = "class_num" value = "<?php echo $allClassInfo['class_num']; ?>" readonly = "readonly" id = "tr-input" /></td>
+									<td><input type = "text" name = "class_type" value = "<?php if($allClassInfo['class_type']=='s'){echo '标准';}else{echo '普通';} ?>" readonly = "readonly" id = "tr-input" /></td>
+									<td>
+									<input type = "text" name = "class_time" value = "<?php 
+										if($allClassInfo['class_time']=='1'){
+											echo '07:00-07:45';
+										}elseif($allClassInfo['class_time']=='2'){
+											echo '08:00-08:45';
+										}elseif($allClassInfo['class_time']=='3'){
+											echo '08:55-09:40';
+										}elseif($allClassInfo['class_time']=='4'){
+											echo '10:00-10:45';
+										}elseif($allClassInfo['class_time']=='5'){
+											echo '10:55-11:40';
+										}elseif($allClassInfo['class_time']=='6'){
+											echo '14:40-15:25';
+										}elseif($allClassInfo['class_time']=='7'){
+											echo '15:35-16:20';
+										}elseif($allClassInfo['class_time']=='8'){
+											echo '16:30-18:00';
+										}elseif($allClassInfo['class_time']=='9'){
+											echo '20:00-21:30';
+										}else{
+											echo '';
+										}
+									?>" readonly = "readonly" id = "tr-input" />
+									</td>
+									<td><input type = "text" name = "order_date" value = "<?php echo date('Y-m-j H:i:s');?>" readonly = "readonly" id = "tr-input" /></td>
+									<td><input type = "text" name = "username" value = "<?php echo $_SESSION['user']['stu_name']; ?>" readonly = "readonly" id = "tr-input" /></td>
+								
+							</tr>
+						</table>
+					</div>
+					
+				</div>
+				<div class = "content-buttom">
+					<a href = "user_center.php?act=booking_class" title = "取消"><div id = "content-reject">取消</div></a>
+					<input type = "submit" value = "确认" id = "content-post" />
+				</div>
+			
+		</form>	
+	</div>
+	<!--版权信息-->
+	<div class = "footer">
+		<p>&copy;2015 HBL All Rights Reserverd</p>
+	</div>
+</body>
+</html>

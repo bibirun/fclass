@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>编辑信息</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href ="style/public.css" />
+		<link rel = "stylesheet" href = "style/my_information.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+				
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" title = "使用手册">使用手册</a></em>
+			</div>
+			
+		</div>
+		
+		
+		<div class = "content">
+			<div class = "change_pass">
+				<form action = "admin.php" method = "post">
+					<input type = "hidden" name = "act" value = "update_edit">
+					<p>姓名&nbsp：<input type = "text" name = "ad_name"  value = "<?php echo $adminInfo['ad_name']; ?>" maxlength = "20" class = "input-pass" /></p><br/>
+					<p>性别：
+						<select name = "ad_sex" id = "select-sex">
+							<option value = "f" <?php if($adminInfo['ad_sex']=='f') echo 'selected = selected;'; ?> >女</option>
+							<option value = "m" <?php if($adminInfo['ad_sex']=='m') echo 'selected = selected;'; ?>>男</option>
+						</select>
+					</p><br/>
+					<p>邮箱&nbsp：<input type = "text" name = "ad_email" value = "<?php echo $adminInfo['ad_email']; ?>" maxlength = "40" class = "input-pass" /></p><br/>
+					<input type = "submit" name = "pass-submit" value = "修改" id = "input-sub" />
+				</form>
+				<a href = "admin.php?act=query">
+					<div id = "cancel-button">
+						取消
+					</div>
+				</a>
+			</div>
+			</div>
+			
+			<!--版权信息-->
+			<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+			</div>
+	</div>
+</body>
+</html>

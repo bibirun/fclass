@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>登录</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/login.css" />
+		<link rel = "stylesheet" href = "style/public.css" />
+	</head>
+<body>
+	<div class = "login">
+	
+		<div class = "public-top">
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "" title = "index">首页</a></em>
+				<em><a href = "" title = "help">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "l-content">
+			
+			<div class = "l-c-banner">
+				
+			</div>
+			
+			<div class ="l-c-form">
+			
+				<form action = "privilege.php" method = "post">
+					<input type = "hidden" name = "act" value = "signin" />
+					<input type = "text" class = "f-user" name = "usernum" maxlength = "20" size = "20" />
+					
+					<input type = "password" class = "f-pass" name = "password" maxlength = "20" size = "20"/>
+					<p id = "forget_pass"><a href = "privilege.php?act=forgetpassword" title = "forget_pass">（忘记密码？）</a></p>
+					<input type = "submit" value = "登录"  id = "submit"/>
+				</form>
+				
+			</div>
+
+		</div>
+		
+		<!--版权信息部分-->
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

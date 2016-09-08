@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>修改密码</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href ="admin/style/public.css" />
+		<link rel = "stylesheet" href = "admin/style/my_information.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+				<img src = "admin/images/p_logo.gif" />
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "home.php"  title = "首页">首页</a></em>
+				<em><a href = "" title = "使用手册">使用手册</a></em>
+			</div>
+			
+		</div>
+		
+		
+		<div class = "content">
+			<div class = "change_pass">
+				<form action = "user_center.php" method = "post">
+					<input type = "hidden" name = "act" value = "update-pass">
+					<p>原有密码：<input type = "password" name = "old-password" maxlength = "20" class = "input-pass" /></p><br/>
+					<p>新&nbsp密&nbsp码&nbsp：<input type = "password" name = "new-password" maxlength = "20" class = "input-pass" /></p><br/>
+					<p>确认密码：<input type = "password" name = "confirm-password" maxlength = "20" class = "input-pass" /></p><br/>
+					<input type = "submit" name = "pass-submit" value = "保存" class = "input-sub" />
+				</form>
+			</div>
+			</div>
+			
+			<!--版权信息-->
+			<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+			</div>
+	</div>
+</body>
+</html>

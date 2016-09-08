@@ -1,0 +1,154 @@
+body,p,li,ul,div,img,h1,h2,h3,h4,h5,h6,input{margin:0;padding:0;border:none;}
+body{
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+	font-size:16px;
+}
+em{font-style:normal;}
+
+/* 头部部分  */
+.top{
+	width:1290px;
+	height:40px;
+	background:#ebebeb;
+	margin:auto;
+	color:#fff;
+}
+.top-one{
+	float:left;
+	width:300px;
+	height:20px;
+	background:#ebebeb;
+	margin-top:8px;
+	margin-left:87px;
+	word-spacing:45px;
+	
+}
+.top-two{
+	float:right;
+	width:350px;
+	height:20px;
+	background:#ebebeb;
+	margin-top:8px;
+	word-spacing:50px;
+	letter-spacing:2px;
+	margin-right:97px;
+	color:#222;
+	font-size:14px;
+}
+
+.top-two em{
+	color:#1c58d6;
+}
+.top a:link,a:visited{
+	font-size:14px;
+	color:#222;
+	text-decoration: none;
+	
+}
+.top a:hover{
+	font-size:14px;
+	color:#1065A5;
+	text-decoration: none;
+}
+
+/*第二部分*/
+.logo{
+	background:#222;
+	width:1290px;
+	height:110px;
+	margin:auto;
+	overflow:hidden;
+}
+.logo-one{
+	background:url("../images/logo.jpg") no-repeat;
+	width:658px;
+	height:67px;
+	margin-left:87px;
+	margin-top:22px;
+	float:left;
+}
+
+
+
+/*底部查询部分*/
+.query{
+	width:1290px;
+	background:#fafafa;
+	margin:auto;
+}
+
+
+#q-button{
+	height:45px;
+	width:90px;
+	background:#0A929A;
+	margin-left:83px;
+	font-family:'\9ED1\4F53','\5B8B\4F53','\6977\4F53',' \5FAE\8F6F\96C5\9ED1',Arial,Sans-Serif;
+	font-size:20px;
+	color:#FFF;
+}
+.q-top{
+	width:1203px;
+	height:60px;
+	background:#222;
+	padding-left:87px;
+}
+.q-top span{
+	color:#FFFFFF;
+	font-size:17px;
+}
+.query-text1{
+	height:30px;
+	width:200px;
+	font-size:16px;
+	color:black;
+	padding-left:5px;
+	margin-left:5px;
+	margin-right:50px;
+	margin-top:15px;
+}
+
+/*显示查询结果样式*/
+.q-result{
+	width:1250px;
+	height:40px;
+	background:#fff;
+	font-size:28px;
+	background:#fafafa;
+	text-align:left;
+	padding:10px 20px;
+}
+
+/*结果项样式*/
+
+.q-table{
+	width:1290px;
+	font-size:15px;
+	color:#000;
+	
+}
+#result-name{
+	color:#FFF;
+	font-size:16px;
+}
+
+#book-button a:link,#book-button a:visited{
+	text-decoration:none;
+	color:#FFF;
+}
+
+#book-button a:hover{
+	text-decoration:none;
+	color:#000;
+}
+.footer{
+	width:1290px;
+	height:30px;
+	margin-left:auto;
+	margin-top:50px;
+	margin-right:auto;
+	//background:#fafafa;
+	color:#929090;
+	font-size:12px;
+	text-align:center;
+}

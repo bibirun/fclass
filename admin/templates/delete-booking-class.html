@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>移除可预约课室</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/all-class.css" />
+		<link rel = "stylesheet" href ="style/public.css" />
+	</head>
+<body>
+	<div class = "user-management">
+		
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "user-management-content">
+		
+			<div class = "query">
+				<form action = "booking.php" method = "post">
+				<input type = "hidden" name = "act" value = "remove-bill-query" />
+					<span>教学楼名称：<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>教学楼编号：<input type = "text" name = "build_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>课室编号：<input type = "text" name = "class_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span><input type = "submit" name = "submit" value = "查询" id = "query-submit" /></span>
+				</form>
+			<a href = "area.php?act=edit" title = "list">
+				<div id = "add-class-content-top">
+					<p>课室列表</p>
+				</div>
+			</a>
+			</div>
+			
+			<div class = "result">
+				<table width = "100%" cellpadding = "5" cellspacing = "1">
+					
+					<tr>
+						<th>序号</th>
+						<th>教学楼名称</th>
+						<th>编号</th>
+						<th>课室号</th>
+						<th>类型</th>
+						<th>容纳人数</th>
+						<th>状态</th>
+						<th>时间</th>
+					</tr>
+					<?php
+						$i = 0;
+						foreach($allClassInfo as $allClassInfos): ?>
+					<tr align = "center" bgcolor = "#FAFAFA">
+						<td><?php echo ++$i ?></td>
+						<td><?php echo $allClassInfos['build_name']; ?></td>
+						<td><?php echo $allClassInfos['build_num']; ?></td>
+						<td><?php echo $allClassInfos['class_num']; ?></td>
+						<td><?php if($allClassInfos['class_type']=='s'){echo '标准';}else{echo '普通';} ?></td>
+						<td><?php echo $allClassInfos['class_contain_num']; ?></td>
+						<td><?php if($allClassInfos['class_status']=='f'){echo '空闲';}else{echo '';} ?></td>
+						<td>
+							<?php 
+								if($allClassInfos['class_time']=='1'){
+									echo '07:00-07:45';
+								}elseif($allClassInfos['class_time']=='2'){
+									echo '08:00-08:45';
+								}elseif($allClassInfos['class_time']=='3'){
+									echo '08:55-09:40';
+								}elseif($allClassInfos['class_time']=='4'){
+									echo '10:00-10:45';
+								}elseif($allClassInfos['class_time']=='5'){
+									echo '10:55-11:40';
+								}elseif($allClassInfos['class_time']=='6'){
+									echo '14:40-15:25';
+								}elseif($allClassInfos['class_time']=='7'){
+									echo '15:35-16:20';
+								}elseif($allClassInfos['class_time']=='8'){
+									echo '16:30-18:00';
+								}elseif($allClassInfos['class_time']=='9'){
+									echo '20:00-21:30';
+								}else{
+									echo '';
+								}
+							?>
+						</td>
+						<td width = "5%" id = "result-td" bgcolor = "#0A929E">
+							<a href = "booking.php?act=remove-class-to&id=<?php echo $allClassInfos['class_id'] ;?>" title = "edit" onclick="return confirm('你确定把<?php
+								if($allClassInfos['class_time']=='1'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-07:00-07:45';
+								}elseif($allClassInfos['class_time']=='2'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-08:00-08:45';
+								}elseif($allClassInfos['class_time']=='3'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-08:55-09:40';
+								}elseif($allClassInfos['class_time']=='4'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-10:00-10:45';
+								}elseif($allClassInfos['class_time']=='5'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-10:55-11:40';
+								}elseif($allClassInfos['class_time']=='6'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-14:40-15:25';
+								}elseif($allClassInfos['class_time']=='7'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-15:35-16:20';
+								}elseif($allClassInfos['class_time']=='8'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-16:30-18:00';
+								}elseif($allClassInfos['class_time']=='9'){
+									echo $allClassInfos['build_name'];
+									echo $allClassInfos['build_num'];
+									echo $allClassInfos['class_num'];
+									echo '-20:00-21:30';
+								}else{
+									echo '';
+								}
+							?>切换到忙时状态吗？');">移除</a>
+						</td>
+					</tr>
+					<?php endforeach;?>
+				</table>
+				<table align = "center">
+					<tr>
+						<td><?php echo $page ;?></td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+		
+	</div>
+</body>
+</html>

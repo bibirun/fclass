@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>增加学生</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/user-management.css" />
+		<link rel = "stylesheet" href ="style/public.css" />
+	</head>
+<body>
+	<div class = "user-management">
+		
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "user-management-content">
+			<div class = "add-user">
+				
+				<form action = "student.php" method = "post">
+					<input type = "hidden" name = "act" value = "insert">
+					<p>帐&nbsp&nbsp号&nbsp&nbsp：<input type = "text" name = "stu_num" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+					<p>姓&nbsp&nbsp名&nbsp&nbsp：<input type = "text" name = "stu_name" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+					<p>密&nbsp&nbsp码&nbsp&nbsp：<input type = "text" name = "stu_pass" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+					<p>性&nbsp别&nbsp&nbsp：
+						<select name = "stu_sex" id = "add-user-select">
+							<option value= "f">女</option>
+							<option value = "m">男</option>
+						</select>
+					</p><br/>
+					
+					<p>学&nbsp&nbsp院&nbsp&nbsp：<input type = "text" name = "stu_coll_name" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+					
+					<p>班&nbsp&nbsp级&nbsp&nbsp：<input type = "text" name = "stu_grade_name" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+					<p>电子邮箱：<input type = "text" name = "stu_email" maxlength = "40" size = "40" id = "add-user-input" /></p><br>
+					
+					<p>级&nbsp别&nbsp&nbsp：
+						<select name = "stu_level" id = "add-user-select">
+							<option value= "1">1</option>
+							<option value = "2">2</option>
+						</select>
+					</p><br/>					
+					<p><input type = "submit" value = "添加" id = "add-user-submit" /></p>
+					
+				</form>
+			</div>
+			<div class = "student-list">
+				<p><a href = "student.php?act=edit" title = "User List">用户列表</a></p>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+		
+	</div>
+</body>
+</html>

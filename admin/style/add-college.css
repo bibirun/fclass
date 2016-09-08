@@ -1,0 +1,153 @@
+body,p,li,ul,div,img,h1,h2,h3,h4,h5,h6,form,input{margin:0px;padding:0px;}
+body{
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+	font-size:16px;
+}
+.add-colege{
+	width:1290px;
+	height:667px;
+	background:#fafafa;
+	margin:auto;
+	font-family:'\9ED1\4F53','\5B8B\4F53','\6977\4F53',' \5FAE\8F6F\96C5\9ED1';
+}
+
+.add-college-content{
+	width:1290px;
+	height:577px;
+	background:#fafafa;
+	margin:auto;
+	overflow:hidden;
+	position:relative;
+}
+
+.add-form{
+	width:1100px;
+	height:355px;
+	border:1px solid #D5D3D3;
+	background:#FFFFFF;
+	margin-left:70px;
+	padding-top:50px;
+	padding-left:60px;
+	margin-top:40px;
+	position:relative;
+	color:#A0A0A0;
+	font-family:'\9ED1\4F53','\5B8B\4F53','\6977\4F53',' \5FAE\8F6F\96C5\9ED1';
+}
+.textarea{
+	width:600px;
+	height:350px;
+	position:absolute;
+	top:30px;
+	right:30px;
+	border: 1px solid #FAFAFA;
+	overflow:hidden;
+}
+.textarea textarea{
+	border:1px solid #D5D3D3;
+}
+#back{
+	position:absolute;
+	right:1070px;
+	top:365px;
+	height:34px;
+	width:65px;
+	background:#0A929E;
+	padding-top:8px;
+	padding-left:25px;
+	color:#FFFFFF;
+	font-size:18px;
+	-moz-border-radius:8px; 
+    -webkit-border-radius: 8px; 
+    border-radius:8px; 
+	
+}
+#back a:link,#back a:visited{
+	text-decoration:none;
+	color:#FFFFFF;
+}
+#back a:hover{
+	text-decoration:none;
+	color:#ededed;
+}
+
+.add-form input{
+	height:45px;
+	width:290px;
+	font-size:15px;
+	border:1px solid #D5D3D3;
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+}
+.add-form h3{
+	background:#FAFAFA;
+	height:33px;
+	width:410px;
+	padding-top:12px;
+}
+#bt-submit{
+	height:45px;
+	width:290px;
+	background:#0A929E;
+	text-align:center;
+	margin-left:120px;
+	color:#FFFFFF;
+	font-size:20px;
+	border:0;
+	-moz-border-radius:8px; 
+    -webkit-border-radius: 8px; 
+    border-radius:8px; 
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;	  
+}
+
+#bt-text{
+	font-size:25px;
+	width:400px;
+	height:45px;
+	padding-left:7px;
+	color:#909090;
+}
+#bt-file{
+	background:#FAFAFA;
+	height:45px;
+	width:410px;
+	color:#A0A0A0;
+	padding:0px;
+	margin:0px;
+	border:none;
+	font-family:'\5FAE\8F6F\96C5\9ED1','\9ED1\4F53','\82F9\679C\4E3D\4E2D\9ED1',Arial;
+}
+/*教学楼简介样式*/
+.add-introduction-content{
+	width:1290px;
+	height:577px;
+	background:#fafafa;
+	margin:auto;
+	overflow:hidden;
+	position:relative;
+}
+.introduction{
+	width:780px;
+	height:450px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+	line-height:30px;
+	text-align:left;
+	letter-spacing:1px;
+	text-indent:24px;
+	border:1px solid #E5E5E5;
+	background:#FFFFFF;
+	overflow:hidden;
+}
+.title{
+	width:800px;
+	height:35px;
+	text-align:center;
+	color:#0A94B8;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:10px;
+	padding-top:5px;
+	background:url(../images/title.jpg) no-repeat #FAFAFA;
+}
+

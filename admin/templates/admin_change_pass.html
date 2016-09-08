@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>登录</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/login.css" />
+		<link rel = "stylesheet" href = "style/public.css" />
+	</head>
+<body>
+	<div class = "login">
+	
+		<div class = "public-top">
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "privilege.php?act=login" title = "index">登录页</a></em>
+				<em><a href = "" title = "help">手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "l-content">
+			
+			<div class = "change_pass_banner">
+				
+			</div>
+			
+			<div class ="change_pass_form">
+			
+				<form action = "privilege.php" method = "post">
+					<input type = "hidden" name = "act" value = "get_new_pass" />
+					<input type = "text" class = "f-user" name = "usernum" maxlength = "20" size = "20" />
+					<input type = "submit" value = "发送"  id = "submit"/>
+				</form>
+				
+			</div>
+
+		</div>
+		
+		<!--版权信息部分-->
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

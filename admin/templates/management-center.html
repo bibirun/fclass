@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = utf-8 />
+		<title>管理中心</title>
+	    <link type = "text/css"  rel = "stylesheet" href = "style/management-center.css"/>
+		<!--<link rel = "stylesheet" href = "style/public.css" />    -->
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+<body>
+	<!--  第一版内容 -->
+	<div>
+	
+		<!--  第一版头部内容 -->
+		<div class = "top">
+			<div class = "top-one">
+				<p>
+					<a href = "index.php" title = "Admin-index">空闲教室预订首页</a>
+					<a href = "" title = "help">系统使用手册</a>
+				</p>
+			</div>
+			<div class = "top-two">
+				<p>
+					<em><?php echo $_SESSION['admin']['ad_name'];?></em>&nbsp欢迎您使用空闲教室预约系统
+					<a href = "privilege.php?act=logout" title = "Logout"><em>退出<em></a>
+				</p>
+			</div>
+				
+		</div>
+		
+		
+		
+		<!--  第一版标志部分 -->
+		<div class = "logo">
+			<div class = "logo-one"></div>
+		</div>
+		
+		<!--  第一版导航栏内容 -->
+		<div class = nav>
+			<ul>
+				<li><a href = "index.php"  title = "Index">首页</a></li>
+				
+				<li><a href = "#" title = "Student Management">个人中心</a>
+					<ul>
+						<li><a href = "admin.php?act=query">个人信息</a></li>
+						<li><a href = "admin.php?act=edit">编辑信息</a></li>
+						<li><a href = "admin.php?act=change-pass">修改密码</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = "#" title = "Student Management">学生管理</a>
+					<ul>
+						<li><a href = "student.php?act=add">添加用户</a></li>
+						<li><a href = "student.php?act=edit">编辑用户信息</a></li>
+						<li><a href = "student.php?act=delete">移除用户</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = "#" title = "Teacher Management">教师管理</a>
+					<ul>
+						<li><a href = "teacher.php?act=add">添加用户</a></li>
+						<li><a href = "teacher.php?act=edit">编辑用户信息</a></li>
+						<li><a href = "teacher.php?act=delete">移除用户</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = "" title = "Class Management">课室管理</a>
+					<ul>
+						<li><a href = "area.php?act=add" title = "Add Class">添加课室</a></li>
+						<li><a href = "area.php?act=edit">编课室信息</a></li>
+						<li><a href = "area.php?act=delete">移除课室</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = "#locator" title = "Buliding Management">教学楼管理</a>
+					<ul>
+						<li><a href = "building.php?act=add">添加教学楼</a></li>
+						<li><a href = "#point">编辑教学楼信息</a></li>
+						<li><a href = "#point">移除教学楼</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = ""  title = " Booking Management">预约管理</a>
+					<ul>
+						<li><a href = "booking.php?act=add-bill">添加可预约课室</a></li>
+						<li><a href = "booking.php?act=delete-bill">移除可预约课室</a></li>
+						<li><a href = "booking.php?act=bill-history">历史记录</a></li>
+					</ul>
+				</li>
+				
+				<li><a href = "deal_order.php?act=deal"  title = "Dispose">预约审批</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		<!--  第一版Banner部分 -->
+		<div class = "banner"></div>
+		<!--  第一版底部部分-->
+		<!--     <div class = "bottom-control"></div>       -->
+	</div>
+	
+	
+	<!--第二版内容-->
+	<div class = "college" id = "point">
+	
+		<div class = "college-top">
+			<h2>教学楼</h2>
+		</div>
+		<div class = "college-content">
+		
+			<!--教学楼图片部分-->
+			<?php foreach($buildingInfo as $buildingInfos):?>
+			<div class = "cc-content">
+				<div class = "cc-pic"><article><a href = "#" ><img src = "<?php echo $buildingInfos['build_pic'];?>" /><h2><?php echo $buildingInfos['build_name'];?></h2></article></a></div>
+				<p class = "c-word"><a href = "building.php?act=edit&id=<?php echo $buildingInfos['build_id'];?>" title = "edit">编辑</a></p>
+				<p class = "c-word"><a href = "building.php?act=delete&id=<?php echo $buildingInfos['build_id'];?>" onclick = "return confirm('你确定要删除<?php echo $buildingInfos['build_name'];?>吗？')" title = "delete">删除</a></p>
+			</div>
+			<?php endforeach;?>
+			
+			<!--第六-->
+			<div class = "cc-content">
+				<div class = "cc-pic"><a href = "building.php?act=add" title = "add building"><img src = "images/add.jpg" /></a></div>
+			</div>
+			<!--教学楼部分结束-->
+		</div>
+	</div>
+	
+	
+	<div class = "footer">
+		<p>&copy;2015 HBL All Rights Reserverd</p>
+	</div>
+</body>
+</html>

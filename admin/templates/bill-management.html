@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>预约审批</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/bill-management.css" />
+		<link rel = "stylesheet" href ="style/public.css" />
+	</head>
+<body>
+	<div class = "user-management">
+		
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php"  title = "首页">首页</a></em>
+				<em><a href = "" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "user-management-content">
+		
+			<div class = "query">
+				<form action = "deal_order.php" method = "post">
+					<input type = "hidden" name = "act" value = "query" />
+					<span>教学楼名称：<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>教学楼编号：<input type = "text" name = "build_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span>课室编号：<input type = "text" name = "class_num" maxlength = "20" size = "20" id = "query-input" /></span>
+					<span><input type = "submit" name = "submit" value = "查询" id = "query-submit" /></span>
+				</form>
+			</div>
+			
+			<div class = "result">
+				<table width = "100%" cellpadding = "5" cellspacing = "1">
+					
+					<tr>
+						<th>序号</th>
+						<th>教学楼名称</th>
+						<th>编号</th>
+						<th>课室编号</th>
+						<th>类型</th>
+						<th>时间</th>
+						<th>申请人</th>
+						<th>备注</th>
+					</tr>
+					<?php 
+						$i = 0;
+						foreach($orderInfo as $orderInfos): ?>
+						<tr align = "center" bgcolor = "#FAFAFA">
+							<td><?php echo ++$i; ?></td>
+							<td><?php echo $orderInfos['build_name']; ?></td>
+							<td><?php echo $orderInfos['build_num']; ?></td>
+							<td><?php echo $orderInfos['class_num']; ?></td>
+							<td><?php if($orderInfos['class_type']== 's'){echo '标准' ;}else{ echo '普通';} ?></td>
+							<td>
+								<?php
+									if($orderInfos['order_time']=='1'){
+											echo '07:00-07:45';
+										}elseif($orderInfos['order_time']=='2'){
+											echo '08:00-08:45';
+										}elseif($orderInfos['order_time']=='3'){
+											echo '08:55-09:40';
+										}elseif($orderInfos['order_time']=='4'){
+											echo '10:00-10:45';
+										}elseif($orderInfos['order_time']=='5'){
+											echo '10:55-11:40';
+										}elseif($orderInfos['order_time']=='6'){
+											echo '14:40-15:25';
+										}elseif($orderInfos['order_time']=='7'){
+											echo '15:35-16:20';
+										}elseif($orderInfos['order_time']=='8'){
+											echo '16:30-18:00';
+										}elseif($orderInfos['order_time']=='9'){
+											echo '20:00-21:30';
+										}else{
+											echo '';
+										}
+								?>
+							</td>
+							<td><?php echo $orderInfos['order_username']; ?></td>
+							<td>--</td>
+							<td width = "8%" id = "result-td" bgcolor = "#0A929E">
+								<a href = "deal_order.php?act=pass&id=<?php echo $orderInfos['order_id']; ?>" title = "pass">通过</a>
+								<a href = "deal_order.php?act=reject&id=<?php echo $orderInfos['order_id']; ?>" title = "reject">拒绝</a>
+							</td>
+						</tr>
+					<?php  endforeach; ?>
+				</table>
+				<table  align = "center">
+					<tr>
+						<td><?php echo $page; ?></td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+			<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+		
+	</div>
+</body>
+</html>

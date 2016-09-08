@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>添加课室</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel = "stylesheet" href = "style/public.css" />
+		<link rel = "stylesheet" href = "style/add-class.css" />
+	</head>
+<body>
+	<div class = "add-class">
+	
+		<!--头部部分-->
+		<div class = "public-top">
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "index.php" title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+			<!--内容部分-->
+		<div class = "add-class-content">
+			
+			<div class = "add-class-content-footer">
+				<div id = "add-class-content-table">
+				
+					<form action = "area.php" method = "post">
+						<input type = "hidden" name = "act" value = "insert" />
+						<p>教学楼&nbsp&nbsp：<input type = "text" name = "build_name" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+						<p>编&nbsp&nbsp号&nbsp&nbsp：<input type = "text" name = "build_num" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+						<p>教室号&nbsp&nbsp：<input type = "text" name = "class_num" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+						<p>类&nbsp&nbsp型&nbsp：
+							<select name = "class_type" id = "add-user-select">
+								<option value = "c">普通</option>
+								<option value = "s"> 标准</option>
+							</select>
+						</p></br>
+						<p>容纳人数：<input type = "text" name = "class_contain_num" maxlength = "20" size = "20" id = "add-user-input" /></p><br>
+						<p>时&nbsp&nbsp间&nbsp：
+							<select name = "class_time" id = "add-user-select">
+								<option value = "1">07:00-07:45</option>
+								<option value = "2">08:00-08:45</option>
+								<option value = "3">08:55-09:40</option>
+								<option value = "4">10:00-10:45</option>
+								<option value = "5">10:55-11:40</option>
+								<option value = "6">14:40-15:25</option>
+								<option value = "7">15:35-16:20</option>
+								<option value = "8">16:30-18:00</option>
+								<option value = "9">20:00-21:30</option>
+							</select>
+						</p></br>
+						<p><input type = "submit" name = "submit" value = "确认" id = "add-user-submit" /></p>
+						
+					</form>
+				</div>
+			</div>
+			<a href = "area.php?act=edit" title = "list">
+			<div id = "add-class-content-top">
+				<p>课室列表</p>
+			</div>
+			</a>
+		</div>
+	</div>
+		
+		<!--版权部分-->
+		<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

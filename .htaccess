@@ -1,0 +1,8 @@
+<IfModule rewrite_module>
+	expiresactive on
+	expiresbytype image/gif "access plus 10 days"
+
+	rewriteengine on
+	rewriterule home.html home.php
+	DirectoryIndex home.php
+</IfModule>

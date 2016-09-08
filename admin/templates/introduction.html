@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>教学楼简介</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href = "admin/style/public.css" />
+		<link rel = "stylesheet" href = "admin/style/add-college.css" />
+	</head>
+<body>
+	<div class = "add-college">
+		<div class = "public-top">
+			<div class = "public-top-one">
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "home.php" title = "首页">首页</a></em>
+				<em><a href = "" title = "使用手册">使用手册</a></em>
+			</div>
+		</div>
+		
+		<div class = "add-introduction-content">
+			<div class = "title">
+				<h2>简&nbsp介</h2>
+			</div>
+			<div class = "introduction">
+				<?php echo $buildingInfo['build_text'];?>
+			</div>
+			
+		</div>
+		
+		<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+		</div>
+	</div>
+</body>
+</html>

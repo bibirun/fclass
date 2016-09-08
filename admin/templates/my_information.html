@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<title>我的资料</title>
+		<link rel="shortcut icon" href="admin/images/favicon.ico" />
+		<link rel = "stylesheet" href ="admin/style/public.css" />
+		<link rel = "stylesheet" href = "admin/style/my_information.css" />
+	</head>
+<body>
+	<div class = "person-center">
+	
+		<div class = "public-top">
+		
+			<div class = "public-top-one">
+				<img src = "admin/images/p_logo.gif" />
+			</div>
+			
+			<div class = "public-top-two">
+				<em>您好，欢迎使用HBL空闲课室预约系统</em>
+				<em><a href = "home.php"  title = "首页">首页</a></em>
+				<em><a href = "" target = "_blank" title = "使用手册">使用手册</a></em>
+			</div>
+			
+		</div>
+		
+		
+		<div class = "content">
+			<div class = "information">
+				<p>学&nbsp&nbsp&nbsp&nbsp号&nbsp&nbsp：<?php echo $studentInfos['stu_num'];?></p>
+				<p>姓&nbsp&nbsp&nbsp&nbsp名&nbsp&nbsp：<?php echo $studentInfos['stu_name']; ?></p>
+				<p>性&nbsp&nbsp&nbsp&nbsp别&nbsp&nbsp：<?php if($studentInfos['stu_sex'] == 'f'){echo '女' ;}else{echo '男';} ?></p>
+				<p>学&nbsp&nbsp&nbsp&nbsp院&nbsp&nbsp：<?php echo $studentInfos['stu_coll_name']; ?></p>
+				<p>班&nbsp&nbsp&nbsp&nbsp级&nbsp&nbsp：<?php echo $studentInfos['stu_grade_name']; ?></p>
+				<p>电子邮箱：<?php echo $studentInfos['stu_email']; ?></p>
+			</div>
+			</div>
+			
+			<!--版权信息-->
+			<div class = "footer">
+				<p>&copy;2015 HBL All Rights Reserverd</p>
+			</div>
+	</div>
+</body>
+</html>

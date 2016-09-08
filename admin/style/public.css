@@ -1,0 +1,58 @@
+body,p,li,ul,div,img,h1,h2,h3,h4,h5,h6,form,input{margin:0;padding:0;}
+img{border:0}
+
+em{font-style:normal;font-size:12px;}
+body{font-family:'\9ED1\4F53','\5B8B\4F53','\6977\4F53',' \5FAE\8F6F\96C5\9ED1';}
+
+.public-top{
+	width:1120px;
+	height:45px;
+	background:#FFF;
+	color:#925804;
+	font-size:18px;
+	font-weight:bold;
+	padding-left:85px;
+	padding-right:85px;
+	padding-top:5px;
+	overflow:hidden;
+}
+
+
+.public-top-one{
+	width:272px;
+	height:32px;
+	background:url(../images/p_logo.gif) no-repeat;
+	float:left;
+}
+
+.public-top-two{
+	width:455px;
+	height:17px;
+	float:right;
+	font-size:12px;
+	color:#a6a6a6;
+	word-spacing:70px;
+	padding: 10px 10px;
+	margin-top:5px;
+}
+.public-top-two a:link,.public-top-two a:visited{
+	text-decoration:none;
+	color:#a6a6a6;
+}
+.public-top-two a:hover{
+	text-decoration:none;
+	color:#0000ee;
+}
+
+
+/*版权信息部分样式*/
+.footer{
+	width:1290px;
+	height:30px;
+	background:#fafafa;
+	color:#929090;
+	font-size:12px;
+	text-align:center;
+	margin:auto;
+	letter-spacing:1px;
+}
